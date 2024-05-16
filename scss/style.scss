@@ -17,21 +17,33 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100vh;
 		max-width: 600px;
 		margin: 0 auto;
+		padding: 50px 0;
+
+		@media (max-width: 480px) {
+			padding: 30px 0;
+		};
 	}
 
 	&__form-box {
 		width: 100%;
 		padding: 50px;
 		background-color: lightgray;
+
+		@media (max-width: 480px) {
+			padding: 25px;
+		};
 	}
 
 	&__form-title {
 		margin-bottom: 30px;
 		text-align: center;
 		font-size: 30px;
+
+		@media (max-width: 480px) {
+			font-size: 22px;
+		};
 	}
 }
 
