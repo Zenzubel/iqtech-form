@@ -31,20 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 			let formData = new FormData(getForm);
 
-			console.log('submit');
-
 			if (error === 0) {
 
-				console.log(error);
-				console.log(formBody);
-
 				formBody.classList.add('sending');
-
 				body.classList.add('lock');
-
 				compliteScreenMassage.classList.add('active');
-
-				console.log('sending');
 
 				//скрипт сервиса отправки//
 				let response = await fetch ('sendmail.php', {
@@ -53,19 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
 				});
 
 				if (response.ok) {
-
 					body.classList.remove('lock');
-					// arroreMassage.classList.remove('error');
-
 					let result = await response.json();
 					getForm.reset();
-
-					console.log('remove lock');
 				}
-				else {}
-
-			} else {
-				// arroreMassage.classList.add('error');
 			}
 		}
 
@@ -76,8 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			const getInputContactValue = getInputContact ? getInputContact.value.trim() : false;
 			const getInputSityValue = getInputSity ? getInputSity.value.trim() : false;
 			const getInputDateValue = getInputDate ? getInputDate.value.trim() : false;
-
-			
 
 			if (getInputCompanyNameValue === '' || getInputCompanyNameValue === null || getInputCompanyNameValue.match(/[a-z]/i)) {
 
@@ -132,10 +112,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		function addError (input) {
 			input.parentElement.classList.add('error');
+			let text = input.parentElement.nextElementSibling.innerHTML;
+
+			if (input === getInputCompanyName) {
+				input.parentElement.nextElementSibling.innerHTML = '';
+				input.parentElement.nextElementSibling.innerHTML = 'Поле заполнено не корректно';
+				input.parentElement.nextElementSibling.style.cssText = `color: rgba(252, 45, 45, 1);`;
+			}
+
+			if (input === getInputInn) {
+				input.parentElement.nextElementSibling.innerHTML = '';
+				input.parentElement.nextElementSibling.innerHTML = 'ИНН должен содержать от 10 до 12 цифр <br> Введенный ИНН не прошел проверку по контрольным цифрам';
+				input.parentElement.nextElementSibling.style.cssText = `color: rgba(252, 45, 45, 1);`;
+			}
+
+			if (input === getInputContact) {
+				input.parentElement.nextElementSibling.innerHTML = '';
+				input.parentElement.nextElementSibling.innerHTML = 'Поле пустое';
+				input.parentElement.nextElementSibling.style.cssText = `color: rgba(252, 45, 45, 1);`;
+			}
+
+			if (input === getInputSity) {
+				input.parentElement.nextElementSibling.innerHTML = '';
+				input.parentElement.nextElementSibling.innerHTML = 'Поле пустое';
+				input.parentElement.nextElementSibling.style.cssText = `color: rgba(252, 45, 45, 1);`;
+			}
+
+			if (input === getInputDate) {
+				input.parentElement.nextElementSibling.innerHTML = '';
+				input.parentElement.nextElementSibling.innerHTML = 'Введите дату';
+				input.parentElement.nextElementSibling.style.cssText = `color: rgba(252, 45, 45, 1);`;
+			}
 		}
 
 		function addComplete (input) {
 			input.parentElement.classList.add('complete');
+			input.parentElement.nextElementSibling.innerHTML = 'Данные поля приняты';
+			input.parentElement.nextElementSibling.style.cssText = `color: green;`;
 		}
 	};
 	form();

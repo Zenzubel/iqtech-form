@@ -11,48 +11,53 @@
 		<section class="project">
 			<div class="project__wrapper">
 				<div class="project__form-box">
-					<div class="project__form-title">Это форма</div>
+					<div class="project__form-title">Валидация формы</div>
 						<div class="project__form-body form-body-js">
-						<form class="form-core" id="form-core" action="#" >
+						<form id="form-core" class="form-core" action="#" >
 
 							<div class="form-shell">
-								<label class="form-label" id="label-company-name" for="input-company-name">
-									<input class="form-input" id="input-company-name" type="text" name="company-name" placeholder="Полное название компании клиента" autocomplete="off" tabindex="1">
+								<label id="label-company-name" class="form-label" for="input-company-name">
+									<input id="input-company-name" class="form-input" type="text" name="company-name" placeholder="Полное название компании клиента" autocomplete="off" tabindex="1">
+								</label>
+								<div id="company-name-help" class="form-help">Заполняется кирилицей как указано в форме ЕГЮРЛ/ЕГРИП</div>
+							</div>
+
+							<div class="form-shell">
+								<label id="label-inn" class="form-label" for="input-inn">
+									<input id="input-inn" class="form-input" type="number " name="inn" placeholder="ИНН" autocomplete="off" tabindex="2">
+								</label>
+								<div id="inn-help" class="form-help">Пример: 4714013370</div>
+							</div>
+
+							<div class="form-shell">
+								<label id="label-contact" class="form-label" for="input-contact">
+									<input id="input-contact" class="form-input" type="text" name="contact" placeholder="Контактное лицо" autocomplete="off" tabindex="3">
+								</label>
+								<div id="contact-help" class="form-help">Указывается ФИО полностью (должность) <br> Пример: Смирнов Виктор Александрочив (начальник ИТ)</div>
+							</div>
+
+							<div class="form-shell">
+								<label id="label-sity" class="form-label" for="input-sity">
+									<input id="input-sity" class="form-input" type="text" name="sity" placeholder="Город поставки" autocomplete="off" tabindex="4">
+								</label>
+								<div id="sity-help" class="form-help">Наименование города указывается полностью, с указанием области или края<br> Пример: Сосновый бор, Ленинградская обл.</div>
+							</div>
+
+							<div class="form-shell">
+								<label id="label-date" class="form-label" for="input-date">
+									<input id="input-date" class="form-input" type="date" name="date" placeholder="Дата первого контакта" autocomplete="off" tabindex="5">
+								</label>
+								<div id="date-help" class="form-help">Дата первого контакта</div>
+							</div>
+
+							<div class="form-shell">
+								<label id="label-text" class="form-label" for="label-text">
+									<textarea id="textarea-text" class="form-extarea" name="textarea" type="text" placeholder="Примечания" tabindex="6"></textarea>
 								</label>
 							</div>
 
 							<div class="form-shell">
-								<label class="form-label" id="label-inn" for="input-inn">
-									<input class="form-input" id="input-inn" type="text" name="inn" placeholder="ИНН" autocomplete="off" tabindex="2">
-								</label>
-							</div>
-
-							<div class="form-shell">
-								<label class="form-label" id="label-contact" for="input-contact">
-									<input class="form-input" id="input-contact" type="text" name="contact" placeholder="Контактное лицо" autocomplete="off" tabindex="3">
-								</label>
-							</div>
-
-							<div class="form-shell">
-								<label class="form-label" id="label-sity" for="input-sity">
-									<input class="form-input" id="input-sity" type="text" name="sity" placeholder="Город поставки" autocomplete="off" tabindex="4">
-								</label>
-							</div>
-
-							<div class="form-shell">
-								<label class="form-label" id="label-date" for="input-date">
-									<input class="form-input" id="input-date" type="date" name="date" placeholder="Дата первого контакта" autocomplete="off" tabindex="5">
-								</label>
-							</div>
-
-							<div class="form-shell">
-								<label class="form-label" id="label-text" for="label-text">
-									<textarea class="form-extarea" id="textarea-text" name="textarea" type="text" placeholder="Примечания" tabindex="6"></textarea>
-								</label>
-							</div>
-
-							<div class="form-shell">
-								<button class="form-button" id="button" type="submit" tabindex="7">Отправить</button>
+								<button id="button" class="form-button" type="submit" tabindex="7">Отправить</button>
 							</div>
 						</form>
 					</div>
