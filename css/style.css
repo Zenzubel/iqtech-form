@@ -304,17 +304,17 @@ body.lock {
 
   .form-input::-moz-placeholder,
   .form-extarea::-moz-placeholder {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .form-input:-ms-input-placeholder,
   .form-extarea:-ms-input-placeholder {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .form-input::placeholder,
   .form-extarea::placeholder {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .complite-mess {
