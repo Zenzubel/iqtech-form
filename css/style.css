@@ -274,8 +274,8 @@ body.lock {
 
 .complite-mess.active {
   z-index: 9999;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -299,6 +299,25 @@ body.lock {
   }
 
   .project__form-title {
+    font-size: 22px;
+  }
+
+  .form-input::-moz-placeholder,
+  .form-extarea::-moz-placeholder {
+    font-size: 16px;
+  }
+
+  .form-input:-ms-input-placeholder,
+  .form-extarea:-ms-input-placeholder {
+    font-size: 16px;
+  }
+
+  .form-input::placeholder,
+  .form-extarea::placeholder {
+    font-size: 16px;
+  }
+
+  .complite-mess {
     font-size: 22px;
   }
 }
